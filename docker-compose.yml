@@ -1,0 +1,9 @@
+services:
+  thiep-cuoi:
+    build: .
+    container_name: thiep-cuoi
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    restart: unless-stopped

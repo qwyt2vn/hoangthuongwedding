@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiệp cưới - Nguyễn Duy Hoàng & Nguyễn Ngọc Thương</title>
+
+  <meta property="og:title" content="Thiệp cưới Nguyễn Duy Hoàng 💍 Nguyễn Ngọc Thương " />
+  <meta property="og:description" content="Trân trọng mời bạn đến dự ngày vui của chúng tôi 💚" />
+  <meta property="og:image" content="https://i.postimg.cc/k4wYkZ5r/11b5f82c-ca78-47c2-9f57-381db67cf15f-(1).jpg" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 🌸 Intro mở cửa -->
+  <div id="intro-screen">
+    <div id="intro-left"></div>
+    <div id="intro-right"></div>
+    <div class="tap-text">💖 Chạm để mở 💖</div>
+  </div>
+
+  <!-- 💍 Nội dung chính -->
+  <!-- data-event-time là chỗ duy nhất bạn cần chỉnh để thay đổi thời gian sự kiện -->
+  <div class="main-content hidden" onclick="initMusic()">
+    <div class="photo-frame">
+      <img src="photo.jpg" alt="Ảnh cưới" class="wedding-photo" />
+    </div>
+
+    <h1 class="double-happiness">囍</h1>
+    <p class="subtitle">LỄ THÀNH HÔN</p>
+    <h2 class="name">
+       <span>Nguyễn Duy Hoàng</span>
+       <span class="ampersand">&</span>
+       <span>Nguyễn Ngọc Thương</span>
+    </h2>
+    <p class="invite">Trân trọng mời <strong id="guestName">{{ guest_name }}</strong></p>
+
+    <!-- Chú ý: chỉnh value của data-event-time ở đây nếu cần -->
+    
+    <div class="date" data-event-time="2026-05-10T09:00:00">
+      <!-- giờ trước -->
+      <div class="time">
+	    <div class="small-time">Vào lúc</div>
+        <div class="big-time" id="eventTimeDisplay">9:00'</div>
+      </div>
+
+      <div class="weekday small" id="weekdayLabel">CHỦ NHẬT</div>
+
+      <!-- ngày lớn -->
+      <div class="big" id="dayNumber">12</div>
+
+      <!-- phần chứa tháng + năm -->
+      <div class="small" id="monthYear">THÁNG 5<br>NĂM 2026</div>
+      </div>
+    <div class="countdown" id="countdown"></div>
+
+<div class="address-container">
+    <p class="subtitle-address">HÔN LỄ ĐƯỢC TỔ CHỨC TẠI</p>
+    <p class="venue-label">NHÀ HÀNG TIỆC CƯỚI</p>
+    <h2 class="venue-name">Queen Plaza Kỳ Hòa</h2>
+    <p class="venue-label">SẢNH QUEEN 1&2</p>
+</div>
+
+<p class="address">📍 16A Lê Hồng Phong, Phường 12, Quận TP.HCM</p>
+
+<div class="buttons">
+  <button onclick="submitChoice('Tham gia')">👍 Nhất định sẽ đến<br>📍 Mở bản đồ</button>
+  <button onclick="submitChoice('Bận - Mừng online')">😭 Tiếc quá, mình bận rồi<br>💌 Mừng cưới online vậy</button>
+</div>
+
+<div class="album-section">
+  <h2 class="album-title">Album ảnh của vợ chồng mình nè</h2>
+  <div class="album-grid" id="albumGrid"></div>
+</div>
+
+<div id="galleryModal" class="hidden">
+  <span class="close-gallery" onclick="closeGallery()">&times;</span>
+  <button class="nav-arrow left" onclick="prevImage()">&#10094;</button>
+  <img id="galleryMainImg" src="" alt="Full ảnh">
+  <button class="nav-arrow right" onclick="nextImage()">&#10095;</button>
+  <div class="gallery-thumbs" id="galleryThumbs"></div>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg" />
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
