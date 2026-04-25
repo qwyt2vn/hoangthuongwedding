@@ -18,6 +18,10 @@ def index():
         html = f.read()
     return render_template_string(html, guest_name=guest)
 
+@app.route('/robots.txt')
+def static_from_root():
+    return send_from_directory(BASE_DIR, request.path[1:])
+
 @app.route("/submit", methods=["POST"])
 def submit():
     """Nhận phản hồi của khách và gửi tới Google Sheet"""
